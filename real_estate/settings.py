@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 from pathlib import Path
 
 import os
@@ -130,8 +131,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'real_estate/static')
- ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'real_estate/static')
+                    ]
 
 # Media Folder settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -139,8 +140,18 @@ MEDIA_URL = '/media/'
 
 
 # Messages
-from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 
 }
+
+# Email Config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USER = 'quilltech57@gmail.com'
+EMAIL_HOST_PASSWORD = 'HELLOworld081++'
+EMAIL_USE_TLS = True
+
+
+print(f"EMAIL_HOST = {EMAIL_HOST}")
