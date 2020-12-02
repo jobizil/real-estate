@@ -41,14 +41,14 @@ def contact(request):
         contact.save()
 
         # Send email
-        send_mail(
-            'Property Listing enqury',
-            'There has been an inqury for ' + listing +
-            '. Sign into admin panel for more information.',
-            'quilltech57@gmail.com',
-            [realtor_email, 'ugbemjob57@gmail.com'],
-            fail_silently=False,
-        )
+        # send_mail(
+        #     'Property Listing enqury',
+        #     'There has been an inqury for ' + listing +
+        #     '. Sign into admin panel for more information.',
+        #     'quilltech57@gmail.com',
+        #     [realtor_email, 'ugbemjob57@gmail.com'],
+        #     fail_silently=False,
+        # )
         messages.success(
             request, 'Your request has been submitted, we\'ll get back to you as soon as possible')
 
